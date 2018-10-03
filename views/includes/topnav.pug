@@ -1,0 +1,44 @@
+.header.clearfix
+  nav.navbar.navbar-expand-md.fixed-top
+    .container
+      a.navbar-brand(href="/") 모두의 프로그래밍
+      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarsExampleDefault", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(data-toggle="dropdown", href="#", role="button", arria-haspopup="true", aria-expanded="false") 컴퓨터공학
+            .dropdown-menu
+              a.dropdown-item(href="#") 머신러닝
+              a.dropdown-item(href="#") 웹 프로그래밍
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(data-toggle="dropdown", href="#", role="button", arria-haspopup="true", aria-expanded="false") 알고리즘
+            .dropdown-menu
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(data-toggle="dropdown", href="#", role="button", arria-haspopup="true", aria-expanded="false") 자료구조
+            .dropdown-menu
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(data-toggle="dropdown", href="#", role="button", arria-haspopup="true", aria-expanded="false") 언어
+            .dropdown-menu
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(data-toggle="dropdown", href="#", role="button", arria-haspopup="true", aria-expanded="false") 인터뷰
+            .dropdown-menu
+          li.nav-item
+            a.nav-link(href="/questions") 질문
+          span.navbar-toggler-icon  
+          if (!currentUser) 
+            li.nav-item
+              a.nav-link(href='/signin') 로그인
+            li.nav-item
+              a.nav-link(href='/users/new') 회원가입
+          else
+            if (currentUser._id == '5bb44287617a20d7a88a0de9')
+              li.nav-item
+                a.nav-link(href="/users") 사용자 관리
+            li.nav-item
+              a.nav-link(href=`/users/${currentUser._id}`) 내정보
+            li.nav-item
+              a.nav-link(href='/signout') 로그아웃
+        
+          
